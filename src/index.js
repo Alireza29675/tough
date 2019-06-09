@@ -1,3 +1,4 @@
+import "@babel/polyfill";
 import Tough from './Tough'
 
 const $ = (query, roots = document.body) => {
