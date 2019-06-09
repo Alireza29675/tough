@@ -1,0 +1,9 @@
+{
+  "name": "tough",
+  "version": "0.0.0",
+  "description": "Tough is a tough element selector which doesn't really give a shit about changing class names and IDs!",
+  "main": "index.js",
+  "repository": "https://github.com/Alireza29675/tough.git",
+  "author": "Alireza Sheikholmolouki <alireza.sheikholmolouki@gmail.com> (https://github.com/Alireza29675)",
+  "license": "MIT"
+}
