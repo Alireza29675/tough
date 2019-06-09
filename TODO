@@ -1,3 +1,4 @@
-TODO: Color similarity check
 TODO: Text similarity check
 TODO: Distance check (close to an element)
+TODO: Support for more complex selectors + Meta like (header > {clickable} + {text})
+TODO: Color search cannot go deep

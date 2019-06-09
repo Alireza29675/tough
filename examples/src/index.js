@@ -1,5 +1,5 @@
 import $ from '../../src'
 
-const elements = $('h1')
+const elements = $.search({ color: '#8a90ff' })
 
-for (let element of elements) console.log(element)
+console.log(elements)

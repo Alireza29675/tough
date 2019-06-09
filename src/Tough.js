@@ -1,4 +1,5 @@
 import deepSearch from './helpers/deepSearch'
+import types from './helpers/types'
 
 class Tough {
 
@@ -8,6 +9,18 @@ class Tough {
     }
 
     select (query) {
+        const steps = query.split(/{(.*?)}/);
+        for (let i = 0; i < steps.length; i++) {
+            const selector = steps[i].trim();
+            if (selector === '') continue;
+            const isMeta = (i % 2 === 1);
+            if (isMeta) this.type(selector)
+            else this.query(selector)
+        }
+        return this;
+    }
+
+    query (query) {
         const elements = [];
         for (let element of this.elements) {
             const inside = element.querySelectorAll(query);
@@ -19,6 +32,11 @@ class Tough {
 
     search (options) {
         this.elements = deepSearch(this.elements, options);
+        return this;
+    }
+
+    type (type) {
+        if (type in types) this.query(types[type].join(', '));
         return this;
     }
 
