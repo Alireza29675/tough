@@ -1,6 +1,13 @@
 const deepSearch = (element, options = {}, answers = []) => {
-    const { text } = options;
-    const condition = element.innerText.includes(text);
+    const { text, caseSensitive = false } = options;
+
+    // conditions
+    const innerText = caseSensitive ? element.innerText : element.innerText.toLowerCase();
+    const searchingText = caseSensitive ? text : text.toLowerCase();
+
+    const condition = innerText.includes(searchingText);
+
+    // Going deep
     if (condition) {
         let isInside = false;
         for (let child of element.children) {

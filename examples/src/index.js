@@ -1,5 +1,3 @@
-import $$ from '../../src'
+import $ from '../../src'
 
-$$.search({
-    text: 'EVERYONE'
-})
+console.log($.search({ text: 'every' }), $('h1'))
