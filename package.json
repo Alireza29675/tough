@@ -1,6 +1,6 @@
 {
   "name": "tough",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Tough is a tough element selector which doesn't really give a shit about changing class names and IDs!",
   "main": "lib/index.js",
   "scripts": {
