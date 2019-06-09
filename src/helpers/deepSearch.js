@@ -1,3 +1,5 @@
+import { check } from "./conditions";
+
 const deepSearch = (elements, options = {}) => {
     const result = [];
     for (let element of elements) {
@@ -9,20 +11,14 @@ const deepSearch = (elements, options = {}) => {
     return result;
 }
 
-const deepSearchFromOneBranch = (element, options = {}, answers = []) => {
-    const { text, caseSensitive = false } = options;
-
-    // conditions
-    const innerText = caseSensitive ? element.innerText : element.innerText.toLowerCase();
-    const searchingText = caseSensitive ? text : text.toLowerCase();
-
-    const condition = innerText.includes(searchingText);
+const deepSearchFromOneBranch = (element, conditions = {}, answers = []) => {
+    const condition = check(element, conditions)
 
     // Going deep
     if (condition) {
         let isInside = false;
         for (let child of element.children) {
-            if (deepSearchFromOneBranch(child, options, answers)) isInside = true;
+            if (deepSearchFromOneBranch(child, conditions, answers)) isInside = true;
         }
         if (!isInside) answers.push(element);
         return answers;
