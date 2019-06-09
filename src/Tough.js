@@ -4,16 +4,22 @@ class Tough {
 
     constructor (query, elements) {
         this.elements = elements;
-        this.search(query);
+        this.select(query);
     }
 
     select (query) {
-
+        const elements = [];
+        for (let element of this.elements) {
+            const inside = element.querySelectorAll(query);
+            inside.forEach(item => elements.push(item));
+        }
+        this.elements = elements;
+        return this;
     }
 
     search (options) {
-        const result = deepSearch(this, options)
-        console.log(result)
+        this.elements = deepSearch(this.elements, options);
+        return this;
     }
 
     *[Symbol.iterator]() {

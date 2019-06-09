@@ -1,8 +1,7 @@
-const deepSearch = (tough, options = {}) => {
-    for (let element of tough) {
-        console.log(element)
-    }
-    // deepSearchFromOneBranch(element, options)
+const deepSearch = (elements, options = {}) => {
+    const result = [];
+    for (let element of elements) result.concat(deepSearchFromOneBranch(element, options))
+    return result;
 }
 
 const deepSearchFromOneBranch = (element, options = {}, answers = []) => {
@@ -18,7 +17,7 @@ const deepSearchFromOneBranch = (element, options = {}, answers = []) => {
     if (condition) {
         let isInside = false;
         for (let child of element.children) {
-            if (deepSearch(child, options, answers)) isInside = true;
+            if (deepSearchFromOneBranch(child, options, answers)) isInside = true;
         }
         if (!isInside) answers.push(element);
         return answers;

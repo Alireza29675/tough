@@ -1,6 +1,7 @@
 import $ from '../../src'
 
-const element = $('h1');
+const elements = $('h1');
 
-console.log(element)
-console.log(String(element))
+for (let element of elements) {
+    console.log(element)
+}
