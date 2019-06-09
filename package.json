@@ -11,9 +11,9 @@
     "build": "webpack --mode production",
     "deploy": "gh-pages -d examples/dist",
     "publish-demo": "yarn run build && yarn run deploy",
-    "publish:patch": "npm version patch --force && npm publish && yarn run publish-demo",
-    "publish:minor": "npm version minor --force && npm publish && yarn run publish-demo",
-    "publish:major": "npm version major --force && npm publish && yarn run publish-demo"
+    "v:patch": "npm version patch --force",
+    "v:minor": "npm version minor --force",
+    "v:major": "npm version major --force"
   },
   "repository": "https://github.com/Alireza29675/tough.git",
   "author": "Alireza Sheikholmolouki <alireza.sheikholmolouki@gmail.com> (https://github.com/Alireza29675)",
