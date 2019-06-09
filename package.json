@@ -2,8 +2,33 @@
   "name": "tough",
   "version": "0.0.0",
   "description": "Tough is a tough element selector which doesn't really give a shit about changing class names and IDs!",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "yarn test",
+    "start": "webpack-dev-server --mode development",
+    "transpile": "babel src -d dist --copy-files",
+    "prepublishOnly": "yarn run transpile",
+    "build": "webpack --mode production",
+    "deploy": "gh-pages -d examples/dist",
+    "publish-demo": "yarn run build && yarn run deploy",
+    "publish:patch": "npm version patch && npm publish && yarn run publish-demo",
+    "publish:minor": "npm version minor && npm publish && yarn run publish-demo",
+    "publish:major": "npm version major && npm publish && yarn run publish-demo"
+  },
   "repository": "https://github.com/Alireza29675/tough.git",
   "author": "Alireza Sheikholmolouki <alireza.sheikholmolouki@gmail.com> (https://github.com/Alireza29675)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^2.1.1",
+    "gh-pages": "^2.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.33.0",
+    "webpack-cli": "^3.3.3",
+    "webpack-dev-server": "^3.7.1"
+  }
 }
