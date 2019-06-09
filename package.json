@@ -1,6 +1,6 @@
 {
   "name": "tough",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Tough is a tough element selector which doesn't really give a shit about changing class names and IDs!",
   "main": "lib/index.js",
   "scripts": {
@@ -11,9 +11,9 @@
     "build": "webpack --mode production",
     "deploy": "gh-pages -d examples/dist",
     "publish-demo": "yarn run build && yarn run deploy",
-    "publish:patch": "npm version patch && npm publish && yarn run publish-demo",
-    "publish:minor": "npm version minor && npm publish && yarn run publish-demo",
-    "publish:major": "npm version major && npm publish && yarn run publish-demo"
+    "publish:patch": "npm version patch --force && npm publish && yarn run publish-demo",
+    "publish:minor": "npm version minor --force && npm publish && yarn run publish-demo",
+    "publish:major": "npm version major --force && npm publish && yarn run publish-demo"
   },
   "repository": "https://github.com/Alireza29675/tough.git",
   "author": "Alireza Sheikholmolouki <alireza.sheikholmolouki@gmail.com> (https://github.com/Alireza29675)",
