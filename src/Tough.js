@@ -22,6 +22,10 @@ class Tough {
         return this;
     }
 
+    each (cb) {
+        for (let element of this) cb(element)
+    }
+
     *[Symbol.iterator]() {
         let i = 0;
         while(this.elements[i] !== undefined) {

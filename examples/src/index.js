@@ -1,7 +1,3 @@
 import $ from '../../src'
 
-const elements = $('h1');
-
-for (let element of elements) {
-    console.log(element)
-}
+const elements = $('h1').search({ text: 'improve' }).each(console.log)
