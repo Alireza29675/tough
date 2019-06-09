@@ -4,7 +4,7 @@ class Tough {
 
     constructor (query, elements) {
         this.elements = elements;
-        this.select(query);
+        if (query) this.select(query);
     }
 
     select (query) {
@@ -20,6 +20,14 @@ class Tough {
     search (options) {
         this.elements = deepSearch(this.elements, options);
         return this;
+    }
+
+    get (index) {
+        return this.elements[index];
+    }
+
+    get length () {
+        return this.elements.length;
     }
 
     each (cb) {
