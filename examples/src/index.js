@@ -1,3 +1,6 @@
 import $ from '../../src'
 
-console.log($.search({ text: 'every' }), $('h1'))
+const element = $('h1');
+
+console.log(element)
+console.log(String(element))

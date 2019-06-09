@@ -1,5 +1,12 @@
-const deepSearch = (element, options = {}, answers = []) => {
-    const { text, caseSensitive = false } = options;
+const deepSearch = (tough, options = {}) => {
+    for (let element of tough) {
+        console.log(element)
+    }
+    // deepSearchFromOneBranch(element, options)
+}
+
+const deepSearchFromOneBranch = (element, options = {}, answers = []) => {
+    const { text = '', caseSensitive = false } = options;
 
     // conditions
     const innerText = caseSensitive ? element.innerText : element.innerText.toLowerCase();
