@@ -1,3 +1,5 @@
-import tough from '../../src'
+import $$ from '../../src'
 
-tough()
+$$.search({
+    text: 'EVERYONE'
+})
