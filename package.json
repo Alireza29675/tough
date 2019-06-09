@@ -33,7 +33,6 @@
     "webpack-dev-server": "^3.7.1"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.4.4",
     "color-rgba": "^2.1.1"
   }
 }

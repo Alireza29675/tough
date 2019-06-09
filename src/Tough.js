@@ -32,13 +32,15 @@ class Tough {
 
     each (cb) {
         for (let element of this) cb(element)
+        return this;
     }
 
-    *[Symbol.iterator]() {
+    [Symbol.iterator]() {
         let i = 0;
-        while(this.elements[i] !== undefined) {
-            yield this.elements[i];
-            ++i;
+        return {
+            next: () => {
+                return { value: this.elements[i++], done: !this.elements[i - 1] }
+            }
         }
     }
 
@@ -56,6 +58,7 @@ class Tough {
     }
 
     [Symbol.isAbstractEqual](selector) {
+        console.log(selector)
         return true;
     }
 

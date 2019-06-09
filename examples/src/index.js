@@ -1,5 +1,5 @@
 import $ from '../../src'
 
-const elements = $.search({ text: 'improve' }).get(0)
+const elements = $('h1')
 
-console.log(elements)
+for (let element of elements) console.log(element)
