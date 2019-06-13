@@ -1,4 +1,5 @@
 import Tough from './Tough'
+import { globalThis } from './globalThis'
 
 const $ = (query, roots) => {
     if (!roots) {
@@ -20,4 +21,5 @@ for (let prop of props) {
     }
 }
 
+if (globalThis) globalThis.$ = $
 export default $
