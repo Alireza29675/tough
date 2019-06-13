@@ -1,7 +1,10 @@
 import Tough from './Tough'
 
-const $ = (query, roots = []) => {
-    if (document) roots = document.body;
+const $ = (query, roots) => {
+    if (!roots) {
+        try { roots = document.body; }
+        catch (e) { roots = [] }
+    }
     if (!Array.isArray(roots)) roots = [roots];
     return new Tough(query, roots);
 }
