@@ -1,8 +1,8 @@
 {
   "name": "tough",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Tough is a tough element selector which doesn't really give a shit about changing class names and IDs!",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "yarn test",
     "start": "webpack-dev-server --mode development",

@@ -75,11 +75,6 @@ class Tough {
         }
     }
 
-    [Symbol.isAbstractEqual](selector) {
-        console.log(selector)
-        return true;
-    }
-
 }
 
 export default Tough
